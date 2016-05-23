@@ -30,5 +30,6 @@ public class Solution {
         	helper.push(curr);
         }
     }
+    return result;
   }
 }
