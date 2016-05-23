@@ -17,10 +17,10 @@ public class Solution {
 	Stack<TreeNode> helper = new Stack<>();
 	TreeNode curr = root;
 	helper.push(curr);
-	curr = curr.left;
 	while (!helper.isEmpty()) {
 		while (curr.left != null) {
-	        helper.push(curr);
+	        helper.push(curr.left);
+	        curr = curr.left;
         }
         curr = helper.pop();
         result.add(curr.val);
