@@ -23,7 +23,7 @@ public class Solution {
 	        helper.push(curr);
         }
         curr = helper.pop();
-        result.add(curr.val)
+        result.add(curr.val);
         curr = curr.right;
     // 这里有问题, 应该是每次一往右走之后马上再检查左边的情况
         if (curr != null) {
