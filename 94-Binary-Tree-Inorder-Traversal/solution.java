@@ -16,19 +16,15 @@ public class Solution {
     }
 	Stack<TreeNode> helper = new Stack<>();
 	TreeNode curr = root;
-	helper.push(curr);
-	while (!helper.isEmpty()) {
-		while (curr.left != null) {
-	        helper.push(curr.left);
+// 	helper.push(curr);
+	while (!helper.isEmpty() || curr != null) {
+		while (curr != null) {
+	        helper.push(curr);
 	        curr = curr.left;
         }
         curr = helper.pop();
         result.add(curr.val);
         curr = curr.right;
-    // 这里有问题, 应该是每次一往右走之后马上再检查左边的情况
-        if (curr != null) {
-        	helper.push(curr);
-        }
     }
     return result;
   }
